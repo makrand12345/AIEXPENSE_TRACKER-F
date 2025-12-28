@@ -1,0 +1,65 @@
+Frontend Folder Structure
+=========================
+
+frontend/
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── README.md
+├── vite.config.js
+├── public/
+│   └── (public assets)
+└── src/
+    ├── App.css
+    ├── App.jsx
+    ├── index.css
+    ├── main.jsx
+    ├── store.js
+    ├── ai/
+    │   ├── analyzer.js
+    │   ├── predictions.js
+    │   └── voiceCommands.js
+    ├── api/
+    │   ├── analyticsApi.js
+    │   ├── authApi.js
+    │   ├── axios.js
+    │   ├── expenseApi.js
+    │   ├── financeApi.js
+    │   └── profileApi.js
+    ├── app/
+    │   └── store.js
+    ├── assets/
+    │   └── (image and asset files)
+    ├── components/
+    │   ├── Navbar.css
+    │   ├── Navbar.jsx
+    │   ├── Pages.css
+    │   ├── VoiceInput.jsx
+    │   └── ui/
+    │       ├── Button.jsx
+    │       ├── Card.jsx
+    │       └── Input.jsx
+    ├── features/
+    │   ├── auth/
+    │   │   └── authSlice.js
+    │   └── expenses/
+    │       └── expensesSlice.js
+    ├── pages/
+    │   ├── Dashboard.jsx
+    │   ├── Expenses.jsx
+    │   ├── FinanceSetup.jsx
+    │   ├── Goals.jsx
+    │   ├── Home.jsx
+    │   ├── Login.jsx
+    │   ├── Profile.jsx
+    │   ├── Reports.jsx
+    │   ├── Settings.jsx
+    │   ├── Signup.jsx
+    │   ├── Summary.jsx
+    │   └── VoiceAssistant.jsx
+    ├── styles/
+    │   └── global.css
+    └── utils/
+        ├── speak.js
+        └── voiceParser.js

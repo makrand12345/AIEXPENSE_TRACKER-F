@@ -1,0 +1,52 @@
+/* Navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 24px;
+  background-color: #0f172a;
+}
+
+/* Left and right sections */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Links */
+.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Profile container */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔒 AVATAR HARD LOCK — THIS FIXES THE EXPLOSION */
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+  min-height: 36px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  display: block;
+}
+
+/* Name next to avatar */
+.nav-name {
+  color: #e5e7eb;
+  font-weight: 500;
+  white-space: nowrap;
+}
