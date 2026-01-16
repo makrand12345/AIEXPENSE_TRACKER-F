@@ -2,31 +2,37 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginApi } from "../api/authApi";
 import { getProfileApi } from "../api/profileApi";
-import { checkFinanceProfileApi } from "../api/financeApi";
+import { getFinanceProfileApi } from "../api/financeApi";
+
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+const handleLogin = async () => {
   try {
     const res = await loginApi({ email, password });
-    localStorage.setItem("token", res.data.access_token);
 
+    // save token
+    localStorage.setItem("token", res.data.access_token);
     window.dispatchEvent(new Event("auth-change"));
 
-    const financeCheck = await checkFinanceProfileApi();
+    // check finance profile using /finance/me
+    const financeRes = await getFinanceProfileApi();
 
-    if (financeCheck.data.exists) {
+    if (financeRes.data.has_profile) {
       navigate("/dashboard");
     } else {
       navigate("/finance-setup");
     }
-  } catch {
-    alert("Invalid credentials");
+
+  } catch (err) {
+    console.error("Login error:", err);
+    alert("Invalid email or password");
   }
 };
+
 
 
   return (
